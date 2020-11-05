@@ -1,0 +1,6 @@
+<Files "logout.php">
+    Allow from all
+</Files>
+<Files "change_password.php">
+    Allow from all
+</Files>

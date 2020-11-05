@@ -1,0 +1,6 @@
+SetEnv APP_ROOT_PATH /
+#DirectoryIndex site-down.html
+#RewriteEngine On
+#RewriteCond %{HTTPS} off
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI}
+ErrorDocument 404 /errors/404.php

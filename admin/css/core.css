@@ -1,0 +1,63 @@
+.form-container{background:url('../images/backgrounds/login.jpg');background-size:cover;}
+.form-s1{max-width:440px;width:100%;padding:40px 20px;background:#fff;border:1px solid #bbb;text-align:center;}
+.form-s1 .inner{max-width:400px;margin:0 auto;}
+.form-s1.align-center{position:absolute;top:50%;left:50%;transform:translateX(-50%) translateY(-50%);}
+.form-s1 .field-group{margin-top:20px;margin-bottom:20px;padding:5px;}
+.form-s1 .if-s1{margin:30px auto 0 auto;display:block;background:#73B400;color:white;max-width:300px;width:100%;font-family:'Open Sans',sans-serif;font-size:16px;padding:15px;border:none;}
+.form-s1 .if-s1::placeholder{color:#fff;}
+.form-s1 .if-s1:focus{outline:none;}
+.form-s1 .btn-s1{padding:15px;font-size:16px;min-width:120px;background:#A0D149;border:none;color:white;transition:background-color 0.3s;cursor:pointer;margin:20px 0;}
+.form-s1 .btn-s1:hover{background-color:#73B400;;}
+.form-s1 .btn-s1:focus{outline:none;}
+.form-s1 .title{color:#73B400;text-align:center;font-size:48px;margin-top:10px;margin-bottom:20px;}
+.form-s1 .status-text{margin:5px 0;}
+
+.welcome-message{position:relative;margin:100px auto;min-width:400px;max-width:600px;background:black;color:white;padding:50px 40px;}
+.welcome-message span{font-size:24px;}
+.welcome-message a{color:lightblue;}
+
+#change-password{position:relative;background:#5499C7;display:none;width:100%;padding:20px;}
+#change-password .close-btn{position:absolute;right:15px;top:5px;color:white;font-size:30px;}
+#change-password .close-btn:hover{color:black;}
+#change-password .inner{position:relative;max-width:1200px;margin:0 auto;text-align:center;}
+#change-password .field-group{display:inline-block;text-align:center;margin:0 15px;vertical-align: top;}
+#change-password .field-group .if-s1-label{display:block;color:white;margin-bottom:10px;margin-left:-5px;}
+#change-password .if-s1{display:block;border:none;outline:none;font-size:18px;padding:5px;border:3px solid black;}
+#change-password .btn-s1{padding:15px;border:none;outline:none;background:black;color:white;font-size:16px;}
+#change-password .btn-s1:hover{cursor:pointer;}
+#btn-change-password{margin-top:20px;}
+#change-password .status{margin:20px 0 0 0;color:white;}
+
+.cms-main{padding:20px;min-height:600px;}
+.cms-main .title{text-align:center;font-size:48px;margin-bottom:0;font-weight:normal;}
+.cms-main .inner{max-width:1600px;margin:0 auto;}
+.cms-main .inner.padding{padding:60px 0;}
+
+.cms-main .cms-subsection{border:2px solid #333;padding:20px;width:100%;background:#eee;max-width:1000px;margin:0 auto;}
+.cms-main .cms-subsection .placeholder{font-size:22px;font-weight:normal;}
+.cms-main .cms-subsection .title{font-size:42px;text-align:left;}
+.cms-main .cms-subsection:not(:last-of-type){margin-bottom:70px;}
+
+.cms-m-uploader{color:black;padding:40px 20px;}
+.cms-m-form{text-align:center;}
+
+.cms-m-form .loader{max-width:180px;margin-top:20px;}
+.cms-m-form .loader img{width:100%;height:auto;}
+.cms-m-form table td{padding:15px 0;text-align:left;}
+.cms-m-form .required{color:red;font-weight:bold;margin-left:5px;}
+.cms-m-form table td:first-child{min-width:140px;}
+.cms-m-form .if-s1{border:2px solid #aaa;padding:10px;font-size:16px;outline:none;max-width:320px;width:100%;}
+.cms-m-form .if-s1:focus{border-color:#444;}
+.cms-m-form .btn-s1{border:2px solid black;color:white;padding:10px;font-size:16px;outline:none;text-align:center;min-width:150px;background:black;}
+.cms-m-form input[type='submit']{margin-top:20px;}
+.cms-m-form .btn-s1:hover{background:#333;}
+
+#cms-response{position:relative;margin-bottom:1rem;display:none;}
+#cms-response .inner{padding:0;position:relative;}
+#cms-response.fail{background:rgba(255,0,0,0.1);}
+#cms-response.success{background:rgba(0,255,0,0.1);}
+#cms-response .close-btn{position:absolute;right:12px;top:5px;font-size:26px;color:#000;}
+#cms-response .close-btn .fas{line-height:100%;}
+#cms-response .close-btn:hover{color:#444;}
+
+.table-prayer-request{width:100%;}

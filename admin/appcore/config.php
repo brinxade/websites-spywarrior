@@ -1,0 +1,26 @@
+<?php
+	DEFINE('DIR_APPCORE',"/admin/appcore");
+	DEFINE('DIR_ADMIN','/admin');
+	DEFINE('DIR_REQUEST_HANDLERS',$_SERVER['DOCUMENT_ROOT'].DIR_APPCORE.'/api_handles//');
+	DEFINE('AUTH_SESSION_CHECK','id name logged-in');
+
+	DEFINE('DB_NAME','spywarrior');
+	DEFINE('DB_ADDR','localhost');
+	DEFINE('DB_USERNAME','root');
+	DEFINE('DB_PASSWORD','');
+
+	DEFINE('FILE_UPLOADER',$_SERVER['DOCUMENT_ROOT'].DIR_APPCORE."/file_uploader.php");
+	DEFINE('CLIENT_HANDLER',$_SERVER['DOCUMENT_ROOT'].DIR_APPCORE."/auth/user.php");
+	DEFINE('DB_HANDLER',$_SERVER['DOCUMENT_ROOT'].DIR_APPCORE."/db/core.php");
+
+	//Request Handlers
+	DEFINE('RH_PRAYER_REQUEST',DIR_REQUEST_HANDLERS."rh_prayer_request.php");
+	DEFINE('RH_LISTINGS',DIR_REQUEST_HANDLERS."rh_listings.php");
+	DEFINE('RH_MINI_GALLERY', DIR_REQUEST_HANDLERS."rh_mini_gallery.php");
+
+	DEFINE('CMS_HOME',$_SERVER['DOCUMENT_ROOT'].DIR_ADMIN."/cms.php");
+
+	//Storage
+	DEFINE('STORAGE_MUSIC',$_SERVER['DOCUMENT_ROOT'].DIR_APPCORE."/storage/music/");
+	DEFINE('STORAGE_MOVIES',$_SERVER['DOCUMENT_ROOT'].DIR_APPCORE."/storage/movies/");
+?>
