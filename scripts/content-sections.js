@@ -35,7 +35,7 @@ window.onload=()=>{
                             <p class="title">${movie.name}</p>
                             <p class="desc">${movie.description}</p>
                         </div>
-                        <a href="movies.php?view=${movie.id}" class="btn">Watch Now</a>
+                        <a href="watch.php?id=${movie.id}" class="btn">Watch Now</a>
                     </div>
                 `;
             });

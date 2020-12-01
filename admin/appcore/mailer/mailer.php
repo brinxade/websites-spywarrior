@@ -20,7 +20,7 @@ function send_mail($email, $subject, $body)
 	$mail->addAddress($email);
 	$mail->addReplyTo("info@davestrades.co", "Reply");
 	$mail->isHTML(true);
-	$mail->Subject = "SpyWarrior - We have received your prayer!";
+	$mail->Subject = $subject;
 	$mail->Body = $body;
 
 	if($mail->send()) 

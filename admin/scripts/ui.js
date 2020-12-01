@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	var t1=200;
+	var url = new URL(window.location.href);
 
 	//commons
 	$(".close-btn").click(function(){
@@ -37,8 +38,8 @@ $(document).ready(function(){
 	});
 
 	//Upload UI
-	var cms_response_status=getUrlParameter("status");
-	var cms_response=getUrlParameter("response");
+	var cms_response_status=url.searchParams.get("status");
+	var cms_response=url.searchParams.get("response");
 	var cms_response_class=(cms_response_status==0)?"fail":"success";
 	var cms_response_output=$("#cms-response");
 

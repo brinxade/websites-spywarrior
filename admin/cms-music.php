@@ -71,7 +71,6 @@
 								<th>Album</th>
 								<th>Artist</th>
 								<th>Last Update</th>
-								<th>Edit</th>
 								<th>Delete</th>
 							</tr>
 						</table>

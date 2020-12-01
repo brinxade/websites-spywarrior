@@ -13,13 +13,14 @@ class RequestHandler
 {
     private static $_requests_=array(
         'pPrayerRequest'=>array('id'=>'pPrayerRequest','name'=>'Send Prayer Request','authType'=>0),
+        'pComment'=>array('id'=>'pComment','name'=>'Put Comment','authType'=>0),
+        'gComments'=>array('id'=>'gComments','name'=>'Get Comments','authType'=>1),
+        'editComment'=>array('id'=>'editComment','name'=>'Edit Comment','authType'=>1),
         'gPrayerRequest'=>array('id'=>'gPrayerRequest','name'=>'Get Prayer Requests','authType'=>1),
         'gListings'=>array('id'=>'gListings','name'=>'Get Listings','authType'=>1),
-
+        'gMovieWithComments'=>array('id'=>'gMovieWithComments','name'=>'Get Movies and associated comments','authType'=>0),
         'gMiniGallery'=>array('id'=>'gMiniGallery', 'name'=>'Get Mini Gallery Content', 'authType'=>0),
-
         'dListings'=>array('id'=>'dListings', 'name'=>'Delete Listing', 'authType'=>1),
-
         'replyToPrayer'=>array('id'=>'replyToPrayer', 'name'=>'Reply to Prayer Request', 'authType'=>1)
     );
 
@@ -102,6 +103,30 @@ class RequestHandler
                 require_once RH_PRAYER_REQUEST;
                 if(!is_null($this::$_requests_['replyToPrayer']['data']))
                     $this->_response=r_replyToPrayer($this->_response, $this::$_requests_['replyToPrayer']['data']);
+                break;
+
+            case 'gMovieWithComments':
+                require_once RH_MOVIES;
+                if(!is_null($this::$_requests_['gMovieWithComments']['data']))
+                    $this->_response=r_getMoviesWithComments($this->_response, $this::$_requests_['gMovieWithComments']['data']);
+                break;
+
+            case 'gComments':
+                require_once RH_COMMENTS;
+                if(!is_null($this::$_requests_['gComments']['data']))
+                    $this->_response=r_getComments($this->_response, $this::$_requests_['gComments']['data']);
+                break;
+            
+            case 'editComment':
+                require_once RH_COMMENTS;
+                if(!is_null($this::$_requests_['editComment']['data']))
+                    $this->_response=r_editComment($this->_response, $this::$_requests_['editComment']['data']);
+                break;
+
+            case 'pComment':
+                require_once RH_COMMENTS;
+                if(!is_null($this::$_requests_['pComment']['data']))
+                    $this->_response=r_putComment($this->_response, $this::$_requests_['pComment']['data']);
                 break;
 
             default:
