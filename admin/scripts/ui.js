@@ -63,4 +63,12 @@ $(document).ready(function(){
 			<div class="loader" style="position:relative;top:20px;"><p>Uploading</p><img src="images/loaders/bar-blue.gif"/></div>
 		`);
 	});
+
+	/**
+	 * Modal Controls
+	 */
+
+	 $(".modal .close").click((e)=>{
+		$(e.target).parent().parent().hide();
+	 });
 });

@@ -26,25 +26,21 @@
 		</div>
 		<header id="header"></header>
 		<main class="base-padding">
-			<section class="section-search">
-				<div class="inner">
-					<div class="search-hero">
-						<input type="text" autocomplete="off" placeholder="Search Movies" data-target="movies" data-output="section-movies"/>
+			<section class="content">
+				<h1 class="section-title">Movies</h1>
+				<div class="search-hero">
+					<input id="search" type="text" placeholder="Search" data-target="movies" data-output="data-container"/>
+				</div>
+				<div class="content-wrapper">
+					<div class="data-container t-center" data-target="movies">
+						<div class="loader"><img src="/images/preloaders/round-cyan.gif"/></div>
 					</div>
 				</div>
 			</section>
-			<section class="main-section page-margin-centered section-movies padding">
-				<div class="inner page-margin-normal base-padding">
-					<div class="data-container">
-						<h5 class="search-placeholder-text"></h5>
-						<h5 class="placeholder-text">There are no movies currently. Please come back later!</h5>
-					</div>
-				</div>
-			</section>	
 		</main>
 		<footer id="footer" class="base-padding"></footer>
 		<script src="https://kit.fontawesome.com/6f67bd47b3.js" crossorigin="anonymous"></script>
-		<script src="scripts/search.js"></script>
+		<script src="scripts/content-sections.js"></script>
 		<script src="scripts/preloader.js"></script>
 	</body>
 </html>

@@ -1,8 +1,5 @@
 
-body{background:#fff;background-color:#222;background:url(/images/backgrounds/bg.jpg);background-size:cover;background-attachment: fixed;}
-
-#webpage-preloader{display:none;position:relative;width:100%;height:100vh;background:#17202A;overflow:hidden;}
-#webpage-preloader .inner{position:absolute;left:50%;top:50%;transform:translateX(-50%) translateY(-60%) rotateY(0deg);text-align: center;}
+body{background:#fff;background-color:#222;color:#fff;background:url(/images/backgrounds/bg.jpg);background-size:cover;background-attachment: fixed;}
 
 /* HOMEPAGE */
 .main-section.padding{padding:20px;}
@@ -24,19 +21,7 @@ body{background:#fff;background-color:#222;background:url(/images/backgrounds/bg
 #homepage-wrapper .section-movies .inner{background:rgba(255,255,255,0);}
 #homepage-wrapper .section-movies .slick-slide{padding:30px 0;}
 #homepage-wrapper .section-events{color:#fff;}
-#homepage-wrapper .section-events .inner{background:#111;border-radius:10px;border:2px solid #444;margin-top:50px;}
-/* HOMEPAGE */
-
-.section-prayers{background:white;margin:150px auto;}
-.section-prayers .form-prayer{margin-top:30px;display:inline-block;}
-.section-prayers .form-prayer .field-group{margin-top:25px;}
-.section-prayers .form-prayer .if{display:block;max-width:460px;border:2px solid transparent;background:white;color:black;padding:15px 10px;width:380px;background:#eee;}
-.section-prayers .form-prayer .if:focus{outline:none;border-color:#2874A6;}
-.section-prayers .form-prayer .txtarea{display:block;max-width:550px;border:2px solid transparent;background:white;color:black;padding:15px 10px;width:380px;font-family:'Roboto', sans-serif;font-size:16px;resize: none;width:520px;height:200px;outline:none;background:#eee;}
-.section-prayers .form-prayer .txtarea:focus{outline:none;border-color:#2874A6;}
-.section-prayers .form-prayer .label{margin-bottom:10px;display:block;}
-.section-prayers .form-prayer .btn{color:white;background:#2874A6;padding:15px;border:none;outline:none;min-width:140px;text-align:center;margin-top:15px;}
-.section-prayers .form-prayer .btn:hover{background:#21618C;}
+#homepage-wrapper .section-events .inner{background:#111;border-radius:10px;border:2px solid #00E2FF;margin-top:50px;}
 
 .music-player{max-width:300px;height:300px;border-radius:10px;overflow:hidden;outline:none;}
 .music-player:hover > .inner .music-container{background-color:rgba(0,0,0,0.5);}
@@ -49,3 +34,61 @@ body{background:#fff;background-color:#222;background:url(/images/backgrounds/bg
 .video-player .inner{display:inline-block;}
 .video-player .video-js{max-width:500px;height:auto;width:100%;}
 .video-player .video-title{color:white;text-align:center;font-size:24px;position:relative;top:25px;}
+/* HOMEPAGE */
+
+/* PAGE: PRAYERS */
+.section-prayers{background:#111;margin:150px auto;border-radius:20px;border:2px solid #00E2FF;}
+.section-prayers .form-prayer{margin-top:30px;display:inline-block;}
+.section-prayers .form-prayer .field-group{margin-top:25px;}
+.section-prayers .form-prayer .if{display:block;background:transparent;max-width:460px;border:2px solid #00E2FF;color:white;padding:15px 10px;width:380px;border-radius:10px;}
+.section-prayers .form-prayer .if:focus{outline:none;}
+.section-prayers .form-prayer .txtarea{display:block;max-width:550px;border:2px solid #00E2FF;background:transparent;border-radius:10px;color:white;padding:15px 10px;width:380px;font-family:'Roboto', sans-serif;font-size:16px;resize: none;width:520px;height:200px;outline:none;}
+.section-prayers .form-prayer .txtarea:focus{outline:none;}
+.section-prayers .form-prayer .label{margin-bottom:10px;display:block;}
+.section-prayers .form-prayer .btn{color:black;border-radius:10px;background:#00E2FF;padding:15px;border:none;outline:none;min-width:140px;text-align:center;margin-top:15px;}
+/* PAGE: PRAYERS */
+
+/* CONTENT SECTIONS */
+.content .section-title{color:#00E2FF;font-size:72px;text-align:center;font-family: 'Pacifico', cursive;}
+.content .content-wrapper{border:3px solid #00E2FF;border-radius:10px;max-width:1100px;margin:0 auto;margin-top:30px;background:rgba(0,0,0,0.6);}
+.content .placeholder{font-size:32px;font-family:'Raleway',sans-serif;font-weight:normal;text-align:center;}
+.content .loader{text-align:center;padding:20px;}
+.content .loader img{max-width:50px;height:auto;}
+
+.content-pagination{display:inline-block;border-top:2px solid #00E2FF;padding:10px;margin:0 auto 0 auto;width:100%;text-align: center;}
+.content-pagination .page{padding:10px;border-radius:5px;min-width:40px;text-align:center;display:inline-block;margin:5px;background: #00E2FF;color:#000;}
+
+/* WIDGET: Search */
+.search-hero{position:relative;}
+.search-hero input{padding:15px;border-radius:10px;border:3px solid #00E2FF;width:100%;max-width:300px;margin:0 auto;font-size:16px;color:white;outline:none;background:rgba(0,0,0,0.6);display:block;transition:all 0.3s;}
+.search-hero input:focus{max-width:400px;}
+
+.music-item{padding:20px;display:flex;align-items:center;}
+.music-item:not(:last-of-type){border-bottom:1px solid #00E2FF;}
+.music-item .info{margin-right:10px;min-width:150px;border-right:1px solid #00E2FF;}
+.music-item .title{font-size:18px;margin:0;}
+.music-item .artist{font-size:14px;margin:0;}
+.music-item .download{display:block;font-size:22px;margin-top:10px;margin-left:-20px;}
+.music-item .download i{padding:20px;}
+.music-item .album{font-size:14px;color:#00E2FF;margin:0;}
+
+/* Event Tiles */
+
+.event-tile{display:inline-block;color:white;border-radius:10px;overflow:hidden;}
+.event-tile .tile-inner{display:inline-flex;align-items: center;padding:20px 40px;background:#222;transition:background-color 0.2s;}
+.event-tile .icon{color:#777;font-size:90px;padding-right:30px;position:relative;margin-right:20px;border-right:2px solid #00E2FF;}
+.event-tile .title{font-size:22px;margin:0;margin-bottom:5px;}
+.event-tile .location{font-size:14px;margin:0;margin-bottom:5px;}
+.event-tile .date{font-size:14px;margin:0;}
+.event-tile .desc{display:block;padding:15px;margin:0;font-size:14px;background:#333;}
+.event-tile .btn{display:block;padding:15px;background:#00E2FF;color:#333;}
+.event-tile .btn:hover{background:#02cfeb;}
+
+/* Movie item */
+.movie-item{margin:20px;display:inline-block;width:380px;border-radius:5px;overflow:hidden;background:#333;}
+.movie-item .thumbnail{overflow:hidden;width:130%;height:250px;}
+.movie-item .thumbnail img{width:100%;height:auto;}
+.movie-item .info{background:#333;color:white;padding:20px;}
+.movie-item .title{margin:0;font-family:"Merriweather",sans-serif;font-size:24px;}
+.movie-item .desc{margin:0;height:100px;overflow:hidden;text-align:left;}
+.movie-item .btn{background:#00E2FF;color:#333;padding:15px 20px;width:100%;display:block;}

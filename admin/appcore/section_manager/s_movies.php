@@ -25,13 +25,14 @@
 	$allowed_ext=array("video"=>array("mp4"),"images"=>array("jpg","png"));
 	$thumbnail_dir="thumbnails/";
 
-	if(isset($_POST['movie-name']) && isset($_FILES['movie-file']) && isset($_FILES['movie-thumbnail']))
+	if(isset($_POST['movie-name']) && isset($_FILES['movie-file']) && isset($_FILES['movie-thumbnail']) && isset($_POST['movie-desc']))
 	{
 		$movie_name=trim($_POST['movie-name']);
+		$movie_desc=trim($_POST['movie-desc']);
 		$file_movie=$_FILES['movie-file'];
 		$file_thumbnail=$_FILES['movie-thumbnail'];
 
-		if(!empty($movie_name) && !empty($file_movie['name']) && !empty($file_thumbnail['name']))
+		if(!empty($movie_name) && !empty($movie_desc) && !empty($file_movie['name']) && !empty($file_thumbnail['name']))
 		{	
 			$conn=new DatabaseConnection();
 
@@ -50,8 +51,8 @@
 				$tfile_thumbnail=$filename_hash.".".pathinfo($file_thumbnail['name'])['extension'];
 				
 				$result=$conn->query("
-					INSERT INTO data_movies(name, filepath, thumbnail, last_update) 
-					VALUES('$movie_name','$tfile_movie', '$tfile_thumbnail', '$curr_time')
+					INSERT INTO data_movies(name, description, filepath, thumbnail, last_update) 
+					VALUES('$movie_name','$movie_desc', '$tfile_movie', '$tfile_thumbnail', '$curr_time')
 					");
 
 				if($conn->get_affected_rows()==1)

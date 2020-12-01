@@ -27,9 +27,9 @@
 		<header id="header"></header>
 		<section class="main-section section-events padding">
 			<div class="inner page-margin-normal base-padding">
-				<h1 class="section-title">Upcoming Events</h1>
+				<h1 class="section-title">Events</h1>
 				<div class="data-container">
-					<h5 class="placeholder-text">There are no upcoming events for now. </h5>
+					<h5 class="placeholder-text">There are events to show. </h5>
 				</div>
 			</div>
 		</section>

@@ -10,6 +10,7 @@ $(document).ready(function(){
     var page=getUrlParameter("page");
         if(!page) page=1;
 
+
     function prayer_listings(){
         $.ajax({
             url:'./appcore/request_handler.php',
@@ -28,6 +29,16 @@ $(document).ready(function(){
                             <td>${result['name']}</td>
                             <td>${result['email']}</td>
                             <td>${result['prayer']}</td>
+                            <td>
+                                <button class="action-btn" data-email="${result['email']}" data-id="${result.id}" data-target="prayer_requests" data-action="reply" onclick="replyToPrayer(this)">
+                                    <i class="fas fa-reply"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button class="action-btn danger" data-id="${result.id}" data-target="prayer_requests" data-action="delete" onclick="deleteListing(this)">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
                         </tr>
                     `);
                 });
@@ -68,8 +79,63 @@ $(document).ready(function(){
         })
     }
 
-    editListing=()=>{
+    editListing=(e)=>{
         console.log("Editing listing");
+    }
+
+    /**
+     * Respond to prayer request
+     */
+    replyToPrayer=(e)=>{
+        console.log("Reply to Prayer");
+
+        let modalCon=$(".prayer-reply");
+        let statusElem=modalCon.find(".status-text");
+        modalCon.show();
+
+        modalCon.find(".btn").click((g)=>{
+            let eventBtn=$(g.target);
+            eventBtn.html(`
+                <div class="loader">
+                    <img src="images/loaders/round.svg"/>
+                </div>
+            `);
+
+            $.ajax({
+                url:"./appcore/request_handler.php",
+                method:'POST',
+                dataType:'json',
+                data:{_request:'replyToPrayer',_data:JSON.stringify({
+                    target:e.dataset.target, 
+                    id:e.dataset.id, 
+                    message:$("#p-message").val(), 
+                    subject:$("#p-subject").val(), 
+                    email: e.dataset.email
+                })},
+                success:function(response){
+                    console.log(response);
+                    
+                    $("#p-message").val('');
+                    $("#p-subject").val('');
+
+                    if(response.ok){
+                        eventBtn.html("Reply has been sent");
+                        setTimeout(()=>{
+                            modalCon.fadeOut(200);
+                            $(e).parent().parent().remove();
+                        },800);
+                        
+                    }
+                    else{
+                        eventBtn.html("Failed to send reply");
+                    }
+                }, 
+                error:function(xhr,e){
+                    console.log("ERR_FAILED_TO_REPLY - "+xhr.responseText);
+                    eventBtn.html("Failed to send reply");
+                }
+            })
+        });
     }
 
     function getListings(target, fields, output=".data-listings"){
@@ -112,6 +178,7 @@ $(document).ready(function(){
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </td>`;
+
                         output_data=`<tr data-id="${row.id}">${output_data}${action_buttons}</tr>`;
                     });
                 }
@@ -142,6 +209,10 @@ $(document).ready(function(){
 
         case "cms-movies.php":
             getListings("movies",['id','name','last_update']);
+            break;
+
+        case "cms-events.php":
+            getListings("events",['id','name','description','location','date','last_update']);
             break;
     }
 });

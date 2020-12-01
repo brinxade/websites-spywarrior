@@ -55,7 +55,7 @@
 				</div>
 			</section>
 			<section class="main-section page-margin-centered section-events padding">
-				<h1 class="section-title">Upcoming Events</h1>
+				<h1 class="section-title">Upcoming and Recently passed Events</h1>
 				<div class="inner page-margin-normal base-padding">
 					<div class="data-container">
 						<div class="data-main">

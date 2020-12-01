@@ -12,13 +12,15 @@ else
 class RequestHandler
 {
     private static $_requests_=array(
-        'pPrayerRequest'=>array('id'=>'pPrayerRequest','name'=>'Send Prayer Request','authType'=>1),
+        'pPrayerRequest'=>array('id'=>'pPrayerRequest','name'=>'Send Prayer Request','authType'=>0),
         'gPrayerRequest'=>array('id'=>'gPrayerRequest','name'=>'Get Prayer Requests','authType'=>1),
         'gListings'=>array('id'=>'gListings','name'=>'Get Listings','authType'=>1),
 
         'gMiniGallery'=>array('id'=>'gMiniGallery', 'name'=>'Get Mini Gallery Content', 'authType'=>0),
 
-        'dListings'=>array('id'=>'dListings', 'name'=>'Delete Listing', 'authType'=>1)
+        'dListings'=>array('id'=>'dListings', 'name'=>'Delete Listing', 'authType'=>1),
+
+        'replyToPrayer'=>array('id'=>'replyToPrayer', 'name'=>'Reply to Prayer Request', 'authType'=>1)
     );
 
     private $_response=['response'=>'','ok'=>'1','data'=>'','errors'=>array()];
@@ -94,6 +96,12 @@ class RequestHandler
                 require_once RH_LISTINGS;
                 if(!is_null($this::$_requests_['dListings']['data']))
                     $this->_response=r_deleteListings($this->_response, $this::$_requests_['dListings']['data']);
+                break;
+
+            case 'replyToPrayer':
+                require_once RH_PRAYER_REQUEST;
+                if(!is_null($this::$_requests_['replyToPrayer']['data']))
+                    $this->_response=r_replyToPrayer($this->_response, $this::$_requests_['replyToPrayer']['data']);
                 break;
 
             default:

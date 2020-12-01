@@ -1,3 +1,6 @@
+/**
+ * Mini Gallery Model/View
+ */
 window.onload=()=>{
     $(document).ready(function(){
 
@@ -25,7 +28,7 @@ window.onload=()=>{
                 data:{_request:'gMiniGallery',_data:JSON.stringify({contentTarget:this.contentTarget})},
                 success:function(response){
                     miniGallery.content=response['data'];
-                    console.log(`Fetched ${miniGallery.content['songs'].length} songs, ${miniGallery.content['movies'].length} movies`);
+                    console.log(`Fetched ${miniGallery.content['songs'].length} songs, ${miniGallery.content['movies'].length} movies, ${miniGallery.content['events'].length} events`);
 
                     miniGallery.loadMusic();
                     miniGallery.loadMovies();
@@ -126,7 +129,7 @@ window.onload=()=>{
                                 <source src="${this.contentPathPrefix+"movies/"+movie.filepath}" type="video/mp4"/>
                               </video>
                             </div>
-                            <span class="video-title">${movie.name}</span>
+                            <span class="video-title"><a href="movies.php?view=${movie.id}">${movie.name}</a></span>
                         </div>
                     </div>
                     `;
@@ -166,9 +169,28 @@ window.onload=()=>{
             let contentCon=sectionCon.find(".data-main");
             let content="";
 
-            if(this.content['events'])
+            if(this.content['events'].length>0)
             {
                 
+                for(let i=0;i<this.content['events'].length;i++)
+                {
+                    content+=`
+                    <div class="event-tile">
+                        <div class="tile-inner">
+                            <i class="icon fas fa-calendar-week"></i>
+                            <div class="info">
+                                <h1 class="title">${this.content['events'][i].name}</h1>
+                                <p class="location">${this.content['events'][i].location}</p>
+                                <p class="date">${this.content['events'][i].date}</p>
+                            </div>
+                        </div>
+                        <p class="desc">${this.content['events'][i].description}</p>
+                        <a href="#" class="btn">View Event</a>
+                    </div>
+                    `;
+                }
+
+                contentCon.html(content);
             }
             else
             {
@@ -177,7 +199,7 @@ window.onload=()=>{
                     'padding':'0',
                     'border':'none',
                     'background':'transparent'}).html(`
-                <h5 class="placeholder-text">There are no upcoming events for now. See the previous events <a href="#">here!</a></h5>
+                <h5 class="placeholder-text">There are no upcoming events for now. See the previous events <a href="events.php">here!</a></h5>
                 `);
 
                 return;

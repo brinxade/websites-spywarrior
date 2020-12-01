@@ -25,15 +25,28 @@
 		<header id="header" class="base-padding"></header>
 		<nav id="main-nav"></nav>
 		<section id="change-password"></section>
+		<div class="modal prayer-reply">
+			<span class="close"><i class="fas fa-times"></i></span>
+			<div class="inner">
+				<h1 class="title">Reply</h1>
+				<input type="text" id="p-subject" placeholder="Subject"/>
+				<textarea type="text" id="p-message" placeholder="Message"></textarea>
+				<p>Leave blank to send default email</p>
+				<p class="status-text"></p>
+				<button class="btn">Send</button>
+			</div>
+		</div>
 		<main class="cms-prayer-request cms-main">
 			<h1 class="title">Prayer Requests</h1>
 			<div class="inner padding">	
 				<div class="data-container">
-					<table class="table-s1 table-prayer-request">
+					<table style="max-width:1200px;margin:0 auto;" class="table-s1 table-prayer-request data-listings">
 						<tr>
 							<th>Name</th>
 							<th>Email</th>
 							<th>Prayer</th>
+							<th>Reply</th>
+							<th>Delete</th>
 						</tr>
 					</table>
 				</div>

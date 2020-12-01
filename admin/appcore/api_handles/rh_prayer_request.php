@@ -1,5 +1,37 @@
 <?php
 
+	function r_replyToPrayer($response, $data)
+	{
+		require_once MAILER;
+
+		$clientData=json_decode($data, true);
+		$target="data_".$clientData["target"];
+		$email=$clientData["email"];
+
+		$message=!empty($clientData["message"])?$clientData["message"]:"Hi there, we have seen your prayer request and fulfilled it. God Bless!";
+		$subject=!empty($clientData["subject"])?$clientData["subject"]:"Prayer Request Fulfilled";
+
+		$db=new DatabaseConnection();
+
+		if(send_mail($email, $subject, $message))
+		{
+			if($db->query("DELETE FROM $target WHERE id=".$clientData['id'])){
+				
+				$response['ok']=1;
+			}
+			else{
+				$response['ok']=0;
+			}
+		}
+		else
+		{
+			$response['ok']=0;
+		}
+
+		$response["replyInfo"]="$email | $subject | $message";
+		return $response;
+	}
+
 	function r_putPrayerRequest($response, $data)
 	{		
 		$data=json_decode($data,true);

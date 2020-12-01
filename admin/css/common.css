@@ -55,3 +55,11 @@ h1, h2, h3{font-family:'Open Sans',sans-serif;letter-spacing:1px;}
 .pagination-s1 .pagination-wrapper .page-item .page-number.active{background:#5499C7;}
 .pagination-s1 .pagination-wrapper .page-item .page-number{display:block;background:black;color:white;padding:8px;width:40px;height:40px;}
 .pagination-s1 .pagination-wrapper .page-item .page-number:hover{background:#444;}
+
+.modal{display:none;position:fixed;background:black;color:white;padding:20px;top:50%;left:50%;transform:translateX(-50%) translateY(-50%);width:400px;}
+.modal .close{position:absolute;font-size:38px;color:#5499C7;right:20px;top:15px;cursor:pointer;}
+.prayer-reply .title{margin-top:0;}
+.prayer-reply .loader img{max-width:30px;height:auto;}
+#p-subject{display:block;border:none;outline:none;width:100%;padding:15px;}
+#p-message{display:block;border:none;outline:none;font-family:arial;height:150px;margin-top:20px;width:100%;padding:15px;}
+.prayer-reply .btn{color:white;font-size:16px;display:block;background: #5499C7;width:100%;padding:15px;outline:none;border:none;}

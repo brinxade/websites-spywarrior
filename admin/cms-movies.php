@@ -40,6 +40,10 @@
 								<td><input type="text" class="if-s1" placeholder="Movie Name" name="movie-name" required/></td>
 							</tr>
 							<tr>
+								<td>Movie Description<span class="required">*</span></td>
+								<td><textarea type="text" class="if-s1" placeholder="Movie Description" name="movie-desc" required></textarea></td>
+							</tr>
+							<tr>
 								<td>Movie File<br/>(mp4)<span class="required">*</span></td>
 								<td><input type="file" class="if-file-s1" name="movie-file" required/></td>
 							</tr>

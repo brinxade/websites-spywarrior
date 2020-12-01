@@ -34,6 +34,7 @@
 
 			case 'movies':
 				$path=STORAGE_MOVIES;
+
 			break;
 		}
 
@@ -41,17 +42,25 @@
 		$result=$db->query("SELECT * FROM $target WHERE id=".$data['id'])->fetch_assoc();
 
 		$response['row']=$result;
-
-		if(unlink($path.$result['filepath']) && unlink($path."thumbnails/".$result['thumbnail']))
+		
+		if(!empty($result['filepath']))
 		{
-			if($db->query("DELETE FROM $target WHERE id=".$data['id']))
-				$response['ok']=true;
+			if(unlink($path.$result['filepath']) && unlink($path."thumbnails/".$result['thumbnail']))
+			{
+				if($db->query("DELETE FROM $target WHERE id=".$data['id']))
+					$response['ok']=true;
+				else
+					$response['response']="ERR_DB_ERROR";
+			}
 			else
-				$response['response']="ERR_DB_ERROR";
+			{
+				$response['response']="ERR_FILE_DELETE_FAILED";
+			}
 		}
 		else
 		{
-			$response['response']="ERR_FILE_DELETE_FAILED";
+			if($db->query("DELETE FROM $target WHERE id=".$data['id']))
+				$response['ok']=true;
 		}
 		
 		return $response;
