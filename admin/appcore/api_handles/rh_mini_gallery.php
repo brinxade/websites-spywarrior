@@ -35,7 +35,7 @@
             }
         }
 
-        $response['paginationDisable']=empty($contentLimitRange)?1:0;
+        $response['paginationDisable']=1;
         $response['contentRange']=$contentLimitRange;
         $response['pageCount']=$contentRows;
         $response['data']=$responseData;

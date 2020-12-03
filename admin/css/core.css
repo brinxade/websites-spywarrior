@@ -61,3 +61,22 @@
 #cms-response .close-btn:hover{color:#444;}
 
 .table-prayer-request{width:100%;}
+
+.cms-edit-events .content{padding:20px 0;margin-top:20px;border-top:1px solid gray;}
+.cms-edit-events .btn-s1{border:none;background:black;color:white;transition:background-color 0.2s;padding:15px;text-align:center;min-width:100px;outline:none;}
+.cms-edit-events .btn-s1:hover{background:#333;}
+.cms-edit-events .if-f-s1{width:200px;}
+.cms-edit-events .loader{display:none;}
+.cms-edit-events .inline-loader{position:relative;top:6px;margin-left:15px;}
+.cms-edit-events .inline-loader img{width:140px;height:auto;}
+.cms-edit-events .status-text-uploader{display:none;margin-bottom:0;border:1px solid green;background:rgb(221, 255, 221);padding:15px;border-radius:10px;}
+.cms-edit-events .status-text-uploader.danger{border-color:red;background:rgb(255, 228, 218);}
+.cms-edit-events .photo{display:inline-block;max-width:360px;margin:10px;position: relative;}
+.cms-edit-events .photo img{width:100%;height:auto;}
+.cms-edit-events .photo .btn{position:absolute;font-size:20px;right:10px;top:10px;padding:10px 13px;border:none;outline:none;background:black;color:white;border-radius:5px;transition:background-color 0.1s;cursor:pointer;}
+.cms-edit-events .photo .btn:hover{background:red;}
+
+.cms-edit-events .video{display:inline-block;max-width:360px;margin:10px;position: relative;}
+.cms-edit-events .video video{width:100%;height:auto;}
+.cms-edit-events .video .btn{position:absolute;z-index:20;font-size:20px;right:10px;top:10px;padding:10px 13px;border:none;outline:none;background:black;color:white;border-radius:5px;transition:background-color 0.1s;cursor:pointer;}
+.cms-edit-events .video .btn:hover{background:red;}

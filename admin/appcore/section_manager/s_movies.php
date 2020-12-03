@@ -73,13 +73,13 @@
 						}
 						else
 						{
-							array_push($errors, "File Upload Failed");
+							array_push($errors, "File Upload Failed: Thumbnail File");
 							$conn->query("DELETE FROM data_movies WHERE name='$movie_name'");
 						}
 					}
 					else
 					{
-						array_push($errors, "File Upload Failed");
+						array_push($errors, "File Upload Failed: Movie file");
 						$conn->query("DELETE FROM data_movies WHERE name='$movie_name'");
 					}
 				}

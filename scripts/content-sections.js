@@ -53,7 +53,7 @@ window.onload=()=>{
                             <p class="artist">${(song.artist)?song.artist:"Artist Unknown"}</p>
 							<p class="album">${(song.album)?song.album:"Single Track"}</p>
                         </div>
-                        <audio controls src="${config.songs.path+song.filepath}">
+                        <audio controls src="${config.songs.path+song.filepath}" preload="null">
 						</audio>
 						<a class="download" href="${config.songs.path+song.filepath}"><i class="fas fa-download"></i></a>
                     </div>
@@ -92,7 +92,10 @@ window.onload=()=>{
                 let paginationCon=$(".content-pagination");
 
                 if(content[dataTarget].length==0)
+                {
                     outputCon.html(`<h2 class="placeholder">${config[dataTarget]['placeholder']}</h2>`);
+                    paginationCon.remove();
+                }
                 else
                 {
                     let pagination="";
@@ -132,7 +135,7 @@ window.onload=()=>{
                         default:
                             console.log("Invalid Data Target for Gallery");
                             break;
-                    }
+                        }
 				}
 				
 				/**

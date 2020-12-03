@@ -2,7 +2,7 @@
 
 class Uploader
 {
-	private const MAX_UPLOAD_SIZE=150000000;
+	private const MAX_UPLOAD_SIZE=1500000000;
 	private $allowed_ext;
 	private $target_dir;
 	
@@ -17,7 +17,7 @@ class Uploader
 	{				
 		if(in_array(pathinfo($file['name'])['extension'], $this->allowed_ext)==1)
 		{
-			if ($file["size"] < $this::MAX_UPLOAD_SIZE) 
+			if ($file["size"] < $this::MAX_UPLOAD_SIZE )
 			{
 				if (move_uploaded_file($file["tmp_name"],($this->target_dir).$target_name))
 				{
@@ -25,12 +25,12 @@ class Uploader
 				} 
 				else 
 				{
-					$this->addError("File Upload Failed");
+					$this->addError("File Upload Failed: Move method failed");
 				}
 			}
 			else
 			{
-				$this->addError("Max Allowed File Size: ".($this::MAX_UPLOAD_SIZE)." MB");
+				$this->addError("Max Allowed File Size: ".($this::MAX_UPLOAD_SIZE/1000000)." MB");
 			}
 		}
 		else

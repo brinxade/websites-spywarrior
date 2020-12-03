@@ -168,6 +168,13 @@ $(document).ready(function(){
                         });
 
                         action_buttons=`
+                            ${(target=="events")?`
+                            <td>
+                                <a href="edit-event.php?id=${row.id}" class="action-btn">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                            `:``}
                             <td>
                                 <button class="action-btn danger" data-id="${row.id}" data-target="${target}" data-action="delete" onclick="deleteListing(this)">
                                     <i class="fas fa-trash-alt"></i>

@@ -61,7 +61,7 @@ window.onload=()=>{
                         <div class="inner" style="background:url(/${this.contentPathPrefix+"music/thumbnails/"+song.thumbnail});">
                             <div class="music-container">
                                 <span class="music-title">${song.name}</span>
-                                <audio src="${this.contentPathPrefix+"music/"+song.filepath}" controls></audio>
+                                <audio src="${this.contentPathPrefix+"music/"+song.filepath}" controls preload="null"></audio>
                             </div>
                         </div>
                     </div>
@@ -125,6 +125,7 @@ window.onload=()=>{
                                     preload="auto"
                                     poster="${this.contentPathPrefix+"movies/thumbnails/"+movie.thumbnail}"
                                     data-setup="{}"
+                                    preload="null"
                                 >
                                 <source src="${this.contentPathPrefix+"movies/"+movie.filepath}" type="video/mp4"/>
                               </video>
@@ -179,13 +180,12 @@ window.onload=()=>{
                         <div class="tile-inner">
                             <i class="icon fas fa-calendar-week"></i>
                             <div class="info">
-                                <h1 class="title">${this.content['events'][i].name}</h1>
-                                <p class="location">${this.content['events'][i].location}</p>
-                                <p class="date">${this.content['events'][i].date}</p>
+                                <p class="location"><strong>Location</strong>${this.content['events'][i].location}</p>
+                                <p class="date"><strong>Time</strong>${this.content['events'][i].date}</p>
                             </div>
                         </div>
-                        <p class="desc">${this.content['events'][i].description}</p>
-                        <a href="#" class="btn">View Event</a>
+                        <h1 class="title">${this.content['events'][i].name}</h1>
+                        <a href="event.php?view=${this.content['events'][i].id}" class="btn">View Event</a>
                     </div>
                     `;
                 }

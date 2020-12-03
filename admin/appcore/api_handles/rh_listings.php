@@ -35,6 +35,12 @@
 			case 'movies':
 				$path=STORAGE_MOVIES;
 
+			case 'events':
+				$dirPath=STORAGE_EVENTS.strval($data['id']);
+				if (is_dir($dirPath)) {
+					$response['path']=$dirPath;
+					rmdir($dirPath);
+				}
 			break;
 		}
 

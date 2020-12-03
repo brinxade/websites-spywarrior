@@ -27,6 +27,16 @@
         $result=$db->query("INSERT INTO $tableName VALUES (DEFAULT, '$eventName', '$eventDesc', '$eventLocation', '$eventDate', '$eventUpdate')");
         
         if($result){
+        
+            $eventId=$db->query("
+                SELECT id FROM $tableName ORDER BY id DESC LIMIT 1;
+            ")->fetch_assoc()["id"];
+            $dirPath=STORAGE_EVENTS.strval($eventId);
+
+            if (!file_exists($dirPath)) {
+                mkdir($dirPath, 0777, true);
+            }
+
             $response='Event created: $eventName';
             $requestOk=true;
         }

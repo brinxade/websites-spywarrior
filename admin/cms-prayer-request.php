@@ -1,6 +1,7 @@
 <?php 
 	require_once "appcore/config.php";
 	require_once CLIENT_HANDLER;
+	require_once CLIENT_COMMONS;
 
 	$status="";
 	$user=new User();
@@ -11,20 +12,14 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-		<title>Spywarrior - Prayer Request</title>
-		
-		<link rel="icon" type="image/png" href="favicon.png">
-		<link href="css/core.css" rel="stylesheet" type="text/css">
-		<link href="css/common.css" rel="stylesheet" type="text/css">
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <title>Spywarrior - Prayer Requests</title>
+		<?php echo $client_commons["head"]; ?>
 	</head>
 	<body>
-		<header id="header" class="base-padding"></header>
-		<nav id="main-nav"></nav>
-		<section id="change-password"></section>
+        <header id="header" class="base-padding"></header>
+        <nav id="main-nav"></nav>
+        <section id="change-password"></section>
+
 		<div class="modal prayer-reply">
 			<span class="close"><i class="fas fa-times"></i></span>
 			<div class="inner">
@@ -58,11 +53,7 @@
 				</div>
 			</div>
 		</main>
-		<footer id="footer" class="base-padding"></footer>
-		<script src="scripts/loader.js"></script>
-		<script src="scripts/common.js"></script>
-		<script src="scripts/ui.js"></script>
-		<script src="scripts/request_handler.js"></script>
-		<script src="https://kit.fontawesome.com/6f67bd47b3.js" crossorigin="anonymous"></script>
+		
+		<?php echo $client_commons["footer"]; ?>
 	</body>
 </html>

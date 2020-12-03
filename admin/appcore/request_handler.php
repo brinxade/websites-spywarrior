@@ -15,6 +15,8 @@ class RequestHandler
         'pPrayerRequest'=>array('id'=>'pPrayerRequest','name'=>'Send Prayer Request','authType'=>0),
         'pComment'=>array('id'=>'pComment','name'=>'Put Comment','authType'=>0),
         'gComments'=>array('id'=>'gComments','name'=>'Get Comments','authType'=>1),
+        'gEventData'=>array('id'=>'gEventData','name'=>'Get Event Data','authType'=>0),
+        'dEventData'=>array('id'=>'dEventData','name'=>'Delete Event Data','authType'=>1),
         'editComment'=>array('id'=>'editComment','name'=>'Edit Comment','authType'=>1),
         'gPrayerRequest'=>array('id'=>'gPrayerRequest','name'=>'Get Prayer Requests','authType'=>1),
         'gListings'=>array('id'=>'gListings','name'=>'Get Listings','authType'=>1),
@@ -127,6 +129,18 @@ class RequestHandler
                 require_once RH_COMMENTS;
                 if(!is_null($this::$_requests_['pComment']['data']))
                     $this->_response=r_putComment($this->_response, $this::$_requests_['pComment']['data']);
+                break;
+            
+            case 'gEventData':
+                require_once RH_EVENTS;
+                if(!is_null($this::$_requests_['gEventData']['data']))
+                    $this->_response=r_getEventData($this->_response, $this::$_requests_['gEventData']['data']);
+                break;
+
+            case 'dEventData':
+                require_once RH_EVENTS;
+                if(!is_null($this::$_requests_['dEventData']['data']))
+                    $this->_response=r_deleteEventData($this->_response, $this::$_requests_['dEventData']['data']);
                 break;
 
             default:
