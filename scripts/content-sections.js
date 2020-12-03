@@ -4,7 +4,7 @@ window.onload=()=>{
         var requestHandler="admin/appcore/request_handler.php";
         var url = new URL(window.location.href);
 		var page = url.searchParams.get("p");
-		console.log("Page Number: "+page);
+		//console.log("Page Number: "+page);
 
         var config={
             movies:{
@@ -33,7 +33,6 @@ window.onload=()=>{
                         </div>
                         <div class="info">
                             <p class="title">${movie.name}</p>
-                            <p class="desc">${movie.description}</p>
                         </div>
                         <a href="watch.php?id=${movie.id}" class="btn">Watch Now</a>
                     </div>
@@ -68,7 +67,37 @@ window.onload=()=>{
 				marginLeft:"-35px"
 			});
         }
-		
+        
+        function loadEvents(outputCon, data){
+            let content="";
+
+            if(data.length>0)
+            {
+                
+                for(let i=0;i<data.length;i++)
+                {
+                    content+=`
+                    <div class="event-tile">
+                        <div class="tile-inner">
+                            <i class="icon fas fa-calendar-week"></i>
+                            <div class="info">
+                                <p class="location"><strong>Location</strong><span class="t-center">${data[i].location}</span></p>
+                                <p class="date"><strong>Time</strong><span class="t-center">${data[i].date}</span></p>
+                            </div>
+                        </div>
+                        <h1 class="title">${data[i].name}</h1>
+                        <a href="event.php?view=${data[i].id}" class="btn">View Event</a>
+                    </div>
+                    `;
+                }
+
+                outputCon.html(content);
+            }
+            else
+            {
+                outputCon.html('<h5 class="placeholder-text">There are events to show. </h5>');
+            }
+        }
 
         $.ajax({
             url:requestHandler,
@@ -77,15 +106,6 @@ window.onload=()=>{
             data:{_request:'gMiniGallery',_data:JSON.stringify({contentTarget:"*",page:page})},
             success:function(response){
                 content=response['data'];
-
-                /**
-                 * Debug Info
-                 */
-                /*
-                console.log(`Fetched ${content['songs'].length} songs, ${content['movies'].length} movies`);
-                console.log("Content Range: "+response['contentRange']);
-                console.log("Page Count: "+response['pageCount']);
-                */
                 
                 let outputCon=$(".data-container");
                 let dataTarget=outputCon.data("target");
@@ -132,6 +152,9 @@ window.onload=()=>{
                             }
                             loadSongs(outputCon, content.songs);
                             break;
+                        case "events":
+                            loadEvents(outputCon, content.events);
+                            break;
                         default:
                             console.log("Invalid Data Target for Gallery");
                             break;
@@ -149,14 +172,13 @@ window.onload=()=>{
 					let qKeywords=q.split(" ");
 					let results=[];
                     
-                    console.log("Searching...");
+                    //console.log("Searching...");
 					if(q)
 					{
 						for(let i=0;i<content[dataTarget].length;i++){
                             let qMatch=true;
 							let keywords=content[dataTarget][i].name.toLowerCase().split(" ");
                             
-                            console.log(qKeywords);
 							for(let g=0;g<qKeywords.length;g++){
 								if(qKeywords[g] && keywords.indexOf(qKeywords[g])==-1){
 									qMatch=false;

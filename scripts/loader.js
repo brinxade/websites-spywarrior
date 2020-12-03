@@ -15,4 +15,17 @@ $(document).ready(function()
 			}
 		});
 	}
+
+	$(".resp-trigger").click(function(){
+		if($(this).hasClass("active"))
+		{
+			$("#header .main-nav ul").stop().slideUp(200);
+			$(this).removeClass("active");
+		}
+		else
+		{
+			$("#header .main-nav ul").stop().slideDown(200);
+			$(this).addClass("active");
+		}
+	});
 });

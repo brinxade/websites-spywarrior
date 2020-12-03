@@ -22,7 +22,8 @@ if(!$user->verify_auth())
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
 	<body>
-		<header id="header" class="base-padding"></header>
+		<header id="header" class="base-padding">
+		</header>
 		<nav id="main-nav"></nav>
 		<section id="change-password"></section>
 		<main class="welcome-message">

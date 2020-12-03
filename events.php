@@ -1,40 +1,24 @@
+<?php require_once "config/client_commons.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-
-		<link rel="icon" type="image/png" href="favicon.png">
 		<title>Spywarrior - Events</title>
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="scripts/libraries/particles-js/particles.min.js"></script>
-		<script src="scripts/loader.js"></script>
-		<script src="scripts/effects.js"></script>
-
-		<link rel="stylesheet" type="text/css" href="css/core.css"/>
-		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
-		<link rel="stylesheet" type="text/css" href="css/common.css"/>
-		<link rel="stylesheet" type="text/css" href="css/ui.css"/>
+		<?php echo $commons['head']; ?>
 	</head>
 	<body>
-	    <div id="webpage-preloader">
-			<div class="inner">
-				<div class="logo normal transition"><img src="images/logo.png" alt="Logo"/></div>
-				<div class="preloader linear-dots center"></div>
-			</div>
-		</div>
+	    <?php echo $commons['page_preloader']; ?>
 		<header id="header"></header>
-		<section class="main-section section-events padding">
+
+		<section class="main-section section-events padding hero">
 			<div class="inner page-margin-normal base-padding">
-				<h1 class="section-title">Events</h1>
-				<div class="data-container">
-					<h5 class="placeholder-text">There are events to show. </h5>
+				<h1 class="section-title t-center">Events</h1>
+				<div class="data-container" data-target="events">
+				<div class="loader"><img src="/images/preloaders/round-cyan.gif"/></div>
 				</div>
 			</div>
 		</section>
-		<footer id="footer" class="base-padding"></footer>
-		<script src="https://kit.fontawesome.com/6f67bd47b3.js" crossorigin="anonymous"></script>
-		<script src="scripts/preloader.js"></script>
+		
+		<?php echo $commons['footer']; ?>
+		<script src="scripts/content-sections.js"></script>
 	</body>
 </html>

@@ -51,5 +51,6 @@
         </main>
 
         <?php echo $client_commons["footer"]; ?>
+        <script src="scripts/manage_events.js"></script>
 	</body>
 </html>

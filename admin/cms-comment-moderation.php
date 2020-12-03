@@ -49,5 +49,6 @@
 		</main>
 
 		<?php echo $client_commons["footer"]; ?>
+		<script src="scripts/comment_moderation.js"></script>
 	</body>
 </html>

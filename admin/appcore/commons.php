@@ -21,9 +21,6 @@
         <script src="scripts/loader.js"></script>
         <script src="scripts/common.js"></script>
         <script src="scripts/ui.js"></script>
-        <script src="scripts/comment_moderation.js"></script>
-        <script src="scripts/manage_events.js"></script>
-        <script src="scripts/request_handler.js"></script>
         <script src="https://kit.fontawesome.com/6f67bd47b3.js" crossorigin="anonymous"></script>
     ';
 ?>

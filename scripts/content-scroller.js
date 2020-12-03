@@ -130,7 +130,7 @@ window.onload=()=>{
                                 <source src="${this.contentPathPrefix+"movies/"+movie.filepath}" type="video/mp4"/>
                               </video>
                             </div>
-                            <span class="video-title"><a href="movies.php?view=${movie.id}">${movie.name}</a></span>
+                            <span class="video-title"><a href="watch.php?id=${movie.id}">${movie.name}</a></span>
                         </div>
                     </div>
                     `;
@@ -180,8 +180,8 @@ window.onload=()=>{
                         <div class="tile-inner">
                             <i class="icon fas fa-calendar-week"></i>
                             <div class="info">
-                                <p class="location"><strong>Location</strong>${this.content['events'][i].location}</p>
-                                <p class="date"><strong>Time</strong>${this.content['events'][i].date}</p>
+                                <p class="location"><strong>Location</strong><span class="t-center">${this.content['events'][i].location}</span></p>
+                                <p class="date"><strong>Time</strong><span class="t-center">${this.content['events'][i].date}</span></p>
                             </div>
                         </div>
                         <h1 class="title">${this.content['events'][i].name}</h1>

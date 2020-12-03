@@ -25,7 +25,8 @@ if(!empty($_POST['username']) && !empty($_POST['password']))
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
 	<body>
-		<div class="form-container size-full-view">
+		<div style="padding:5px;" class="form-container size-full-view">
+			<a href="/" style="display:block;color:White;max-width:200px;font-size:20px;text-align:center;margin:20px auto 0 auto;padding:15px;background:black;">Go to <strong>SpyWarrior</strong></a>
 			<form id="login" class="form-s1 align-center" action="<?php echo $_SERVER['PHP_SELF']."?destination=".$destination; ?>" enctype="multipart/form-data" method="POST">
 				<div class="inner">
 					<h1 class="title">Login</h1>

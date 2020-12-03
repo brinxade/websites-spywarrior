@@ -1,31 +1,16 @@
+<?php require_once "config/client_commons.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-
-		<link rel="icon" type="image/png" href="favicon.png"/>
 		<title>Spywarrior - Music</title>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="scripts/libraries/particles-js/particles.min.js"></script>
-		<script src="scripts/loader.js"></script>
-		<script src="scripts/effects.js"></script>
-
-		<link rel="stylesheet" type="text/css" href="css/core.css"/>
-		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
-		<link rel="stylesheet" type="text/css" href="css/common.css"/>
-		<link rel="stylesheet" type="text/css" href="css/ui.css"/>
+		<?php echo $commons["head"]; ?>
 		<link rel="stylesheet" type="text/css" href="scripts/libraries/audio-player/audioplayer.css"/>
 	</head>
 	<body>
-	    <div id="webpage-preloader">
-			<div class="inner">
-				<div class="logo normal transition"><img src="images/logo.png" alt="Logo"/></div>
-				<div class="preloader linear-dots center"></div>
-			</div>
-		</div>
+		<?php echo $commons["page_preloader"]; ?>
 		<header id="header"></header>
+
 		<main class="base-padding">
 			<section class="content">
 				<h1 class="section-title">Music</h1>
@@ -40,10 +25,9 @@
 				</div>
 			</section>
 		</main>
-		<footer id="footer" class="base-padding"></footer>
+		
 		<script src="scripts/libraries/audio-player/audioplayer.js"></script>
+		<?php echo $commons["footer"]; ?>
 		<script src="scripts/content-sections.js"></script>
-		<script src="https://kit.fontawesome.com/6f67bd47b3.js" crossorigin="anonymous"></script>
-		<script src="scripts/preloader.js"></script>
 	</body>
 </html>

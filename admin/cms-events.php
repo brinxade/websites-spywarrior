@@ -73,5 +73,7 @@
 		</main>
 
 		<?php echo $client_commons["footer"]; ?>
+		<script src="scripts/manage_events.js"></script>
+		<script src="scripts/request_handler.js"></script>
 	</body>
 </html>
