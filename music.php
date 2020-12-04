@@ -21,7 +21,6 @@
 					<div class="data-container" data-target="songs">
 						<div class="loader"><img src="/images/preloaders/round-cyan.gif"/></div>
 					</div>
-					<div class="content-pagination"></div>
 				</div>
 			</section>
 		</main>

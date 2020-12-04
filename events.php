@@ -13,7 +13,7 @@
 			<div class="inner page-margin-normal base-padding">
 				<h1 class="section-title t-center">Events</h1>
 				<div class="data-container" data-target="events">
-				<div class="loader"><img src="/images/preloaders/round-cyan.gif"/></div>
+				<div class="loader"><img src="/images/preloaders/round-cyan.gif" width="70" height="70"/></div>
 				</div>
 			</div>
 		</section>

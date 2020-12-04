@@ -14,6 +14,10 @@ window.onload=()=>{
             songs:{
                 path:"admin/appcore/storage/music/",
                 placeholder:"No Songs Found"
+            },
+            events:{
+                path:"admin/appcore/storage/music/",
+                placeholder:"No Events Found"
             }
         };
 
@@ -113,7 +117,7 @@ window.onload=()=>{
 
                 if(content[dataTarget].length==0)
                 {
-                    outputCon.html(`<h2 class="placeholder">${config[dataTarget]['placeholder']}</h2>`);
+                    outputCon.html(`<h2 class="placeholder-text">${config[dataTarget]['placeholder']}</h2>`);
                     paginationCon.remove();
                 }
                 else

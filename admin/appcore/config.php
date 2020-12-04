@@ -5,9 +5,9 @@
 	DEFINE('AUTH_SESSION_CHECK','id name logged-in');
 
 	DEFINE('DB_NAME','spywarrior');
-	DEFINE('DB_ADDR','localhost');
+	DEFINE('DB_ADDR','35.188.80.186');
 	DEFINE('DB_USERNAME','root');
-	DEFINE('DB_PASSWORD','');
+	DEFINE('DB_PASSWORD','GodIsOne');
 
 	DEFINE('FILE_UPLOADER',$_SERVER['DOCUMENT_ROOT'].DIR_APPCORE."/file_uploader.php");
 	DEFINE('CLIENT_HANDLER',$_SERVER['DOCUMENT_ROOT'].DIR_APPCORE."/auth/user.php");
