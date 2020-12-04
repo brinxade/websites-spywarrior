@@ -143,6 +143,15 @@ body{background:#fff;background-color:#222;color:#fff;background:url(/images/bac
 
 @media (max-width:1000px){
     h1{font-size:42px;}
+    .section-prayers .section-title{font-size:42px;}
+    .section-events .section-title{font-size:42px;}
     .event-tile .title{font-size:20px;}
-    .main-section.padding{padding:0;}
+    
+    #homepage-wrapper .main-section .section-title{font-size:42px;margin-bottom:-10px;}
+    .main-section:not(:last-of-type){margin-bottom:-90px !important;}
+
+    #watch-movie{margin-top:10px;margin-bottom:10px;}
+    #movie-panel{width:100%;height:auto;min-height:auto;}
+    #movie-info-panel{width:100%;height:auto;min-height:auto;}
+    .content{margin-bottom:10px;}
 }
